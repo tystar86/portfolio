@@ -1,17 +1,14 @@
-import { Component } from 'react';
 import BaseLayout from '../components/layouts/BaseLayout';
 import BasePage from '../components/BasePage';
 
-class Home extends Component {
-    render() {
-      return(
-        <BaseLayout>
-          <BasePage>
-            <h1>CV page</h1>
-          </BasePage>
-        </BaseLayout>
-      )
-    }
+const CV = () => {
+  return(
+    <BaseLayout>
+      <BasePage>
+        <h1>CV page</h1>
+      </BasePage>
+    </BaseLayout>
+  )
   }
   
-  export default Home;
+  export default CV;
