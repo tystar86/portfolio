@@ -1,4 +1,4 @@
-import Header from '../shared/header';
+import Header from '../shared/Header';
 
 const BaseLayout = (props) => {
     return(
