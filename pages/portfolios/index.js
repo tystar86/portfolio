@@ -2,6 +2,7 @@ import { Component } from 'react';
 import BaseLayout from '../../components/layouts/BaseLayout';
 import axios from 'axios';
 import Link from 'next/link';
+import BasePage from '../../components/BasePage';
 
 class Home extends Component {
   static async getInitialProps() {
@@ -26,10 +27,12 @@ class Home extends Component {
 
       return(
         <BaseLayout>
-          <h1>Portfolios page</h1>
-          <ul>
-            {this.renderPosts(posts)}
-          </ul>
+          <BasePage>
+            <h1>Portfolios page</h1>
+            <ul>
+              {this.renderPosts(posts)}
+            </ul>
+          </BasePage>
         </BaseLayout>
       )
     }

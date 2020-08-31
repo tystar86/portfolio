@@ -30,11 +30,9 @@ const Header = () => {
         color="transparent"
         dark
         expand="md">
-        <NavbarBrand>
-          <Link href="/">
-            <a className="port-navbar-brand">Štěpánka Lucinová</a>
-          </Link>
-        </NavbarBrand>
+        <Link href="/">
+            <a className="navbar-brand port-navbar-brand">Štěpánka Lucinová</a>
+        </Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
@@ -45,13 +43,13 @@ const Header = () => {
               <BsNavLink href="/about" title="About"/>
             </NavItem>
             <NavItem className="port-navbar-item">
+              <BsNavLink href="/cv" title="CV"/>
+            </NavItem>
+            <NavItem className="port-navbar-item">
+              <BsNavLink href="/blog" title="Blog"/>
+            </NavItem>
+            <NavItem className="port-navbar-item">
               <BsNavLink href="/portfolios" title="Portfolios"/>
-            </NavItem>
-            <NavItem className="port-navbar-item">
-              <BsNavLink href="/blogs" title="Blogs"/>
-            </NavItem>
-            <NavItem className="port-navbar-item">
-              <BsNavLink href="/cv" title="Cv"/>
             </NavItem>
           </Nav>
         </Collapse>
