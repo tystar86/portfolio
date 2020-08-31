@@ -1,3 +1,15 @@
-.style-from-file {
-  font-size: 30px;
+@import './shared/fonts';
+@import './shared/index';
+
+html, body {
+  font-family: Montserrat, Helvetica !important;
+  height: 100%;
+  width: 100%;
+}
+
+.self-typed {
+  font-size: 31px;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
 }

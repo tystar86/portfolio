@@ -14,6 +14,7 @@ class Home extends Component {
     }
     return { posts: posts.slice(0, 10) };
   }
+  
   renderPosts(posts) {
     return posts.map(post => 
       <li key={post.id} style={{'fontSize': '20px'}}>
