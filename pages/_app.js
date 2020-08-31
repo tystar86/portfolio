@@ -1,5 +1,5 @@
-import '../styles/globals.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/main.scss';
 import { Component } from 'react';
 
 class MyApp extends Component {
