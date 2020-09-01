@@ -4,9 +4,9 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
-  NavItem
+  NavItem,
+  Button,
 } from 'reactstrap';
 
 
@@ -16,6 +16,18 @@ const BsNavLink = props => {
     <Link href={href}>
       <a className="nav-link port-navbar-link">{title}</a>
     </Link>
+  )
+}
+
+const LoginButton = () => {
+  return(
+    <span className="nav-link port-navbar-link clickable">Login</span>
+  )
+}
+
+const LogoutButton = () => {
+  return(
+    <span className="nav-link port-navbar-link clickable">Logout</span>
   )
 }
 
@@ -50,6 +62,14 @@ const Header = () => {
             </NavItem>
             <NavItem className="port-navbar-item">
               <BsNavLink href="/portfolios" title="Portfolios"/>
+            </NavItem>
+          </Nav>
+          <Nav className="mr-auto" navbar>
+            <NavItem className="port-navbar-item">
+              <LoginButton />
+            </NavItem>
+            <NavItem className="port-navbar-item">
+              <LogoutButton />
             </NavItem>
           </Nav>
         </Collapse>

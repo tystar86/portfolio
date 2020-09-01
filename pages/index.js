@@ -1,10 +1,10 @@
-import BaseLayout from '../components/layouts/BaseLayout';
 import { Container, Row, Col } from 'reactstrap';
 import Typed from 'react-typed';
-import BasePage from '../components/BasePage';
+import BaseLayout from '@/components/layouts/BaseLayout';
+import BasePage from '@/components/BasePage';
 
 const Home = () => {
-  const roles = ["developer", "tech lover", "snowboarder"]
+  const roles = ["django", "python", "javascript", "react", "next.js"]
 
   return(
     <BaseLayout className="cover">
@@ -13,7 +13,6 @@ const Home = () => {
           <div className="background-image">
             <img src="/images/background-index.png" />
           </div>
-
           <Container>
             <Row>
               <Col md="6">
