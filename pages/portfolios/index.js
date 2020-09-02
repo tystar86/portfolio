@@ -1,13 +1,14 @@
-import axios from 'axios';
 import Link from 'next/link';
 import BaseLayout from '@/components/layouts/BaseLayout';
 import BasePage from '@/components/BasePage';
+import { useGetData } from '../../actions';
 
-const Portfolios = ({posts}) => {
-  const renderPosts = (posts) => {
-    return posts.map(post => 
-      <li key={post.id} style={{'fontSize': '20px'}}>
-        <Link as={`/portfolios/${post.id}`} href={'/portfolios/[id]'}><a>{post.title}</a></Link>
+const Portfolios = () => {
+  const { data, error, loading } = useGetData('/api/posts');
+  const renderData = (data) => {
+    return data.map(d => 
+      <li key={d.id} style={{'fontSize': '20px'}}>
+        <Link as={`/portfolios/${d.id}`} href={'/portfolios/[id]'}><a>{d.title}</a></Link>
       </li>)
   }
 
@@ -15,23 +16,12 @@ const Portfolios = ({posts}) => {
     <BaseLayout>
       <BasePage>
         <h1>Portfolios page</h1>
-        <ul>
-          {renderPosts(posts)}
-        </ul>
+        { loading && <div>Loading...</div> }
+        { data && <ul>{renderData(data)}</ul> }
+        { error && <div className="alert alert-danger">{error.message}</div>}
       </BasePage>
     </BaseLayout>
   )
-  }
-
-  Portfolios.getInitialProps = async () => {
-    let posts = [];
-    try {
-      const response = await axios.get('https://jsonplaceholder.typicode.com/posts')
-      posts = response.data
-    } catch(e) {
-      console.log(e)
-    }
-    return { posts: posts.slice(0, 10) };
   }
   
 export default Portfolios;
